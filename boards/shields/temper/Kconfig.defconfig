@@ -13,7 +13,6 @@ if SHIELD_TEMPER_LEFT || SHIELD_TEMPER_RIGHT
 config ZMK_SPLIT
     default y
 
-endif
 if ZMK_DISPLAY
 
 config I2C
@@ -41,3 +40,4 @@ endchoice
 
 endif # LVGL
 
+endif
