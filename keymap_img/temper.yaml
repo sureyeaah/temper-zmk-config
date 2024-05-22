@@ -1,26 +1,17 @@
 layers:
   default:
-  - - Q
-    - W
-    - F
-    - P
-    - B
-    - J
-    - L
-    - U
-    - Y
-    - {t: '''', s: '"'}
-  - [A, R, S, T, G, M, N, E, I, O]
-  - - Z
-    - X
-    - C
+  - [Q, W, E, R, T, Y, U, I, O, P]
+  - - A
+    - S
     - D
-    - V
-    - K
+    - F
+    - G
     - H
-    - {t: ',', s: ;}
-    - {t: ., s: ':'}
-    - {t: '?', s: '!'}
+    - J
+    - K
+    - L
+    - {t: ;, s: ':'}
+  - [Z, X, C, V, B, N, M, '&COMMA', '&DOT', '&SLASH']
   - - ⌘
     - num
     - {t: ⇧, s: ⇪}
