@@ -11,7 +11,16 @@ layers:
     - K
     - L
     - {t: ;, s: ':'}
-  - [Z, X, C, V, B, N, M, '&COMMA', '&DOT', '&SLASH']
+  - - Z
+    - X
+    - C
+    - V
+    - B
+    - N
+    - M
+    - {t: ',', s: <}
+    - {t: ., s: '>'}
+    - {t: /, s: '?'}
   - - ⌘
     - num
     - {t: ⇧, s: ⇪}
