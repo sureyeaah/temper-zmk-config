@@ -7,5 +7,9 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-nodefree-config
+      url: https://github.com/urob/zmk-nodefree-config.git
+      path: config/zmk-nodefree-config
+      revision: main
   self:
     path: config
