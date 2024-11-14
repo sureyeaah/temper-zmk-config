@@ -20,7 +20,7 @@
 #define NUM 3
 #define SYS 4
 
-#include "mouse.dtsi"
+/* #include "mouse.dtsi" */
 #include "combos.dtsi"
 
 #define XXX &none
