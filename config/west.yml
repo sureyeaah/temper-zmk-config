@@ -12,8 +12,6 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: keeb-it
       url-base: https://github.com/keeb-it
-    - name: ftc
-      url-base: https://github.com/ftc
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -32,8 +30,5 @@ manifest:
     - name: cirque-input-module
       remote: petejohanson
       revision: main
-    - name: zmk-mouse
-      remote: ftc
-      revision: mouse-ftc
   self:
     path: config
