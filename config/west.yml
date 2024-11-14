@@ -17,10 +17,6 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-nodefree-config
-      url: https://github.com/urob/zmk-nodefree-config.git
-      path: config/zmk-nodefree-config
-      revision: main
     # Note: The following imports only shields definition files
     - name: zmk-keyboards
       remote: keeb-it
@@ -34,5 +30,8 @@ manifest:
     - name: cirque-input-module
       remote: petejohanson
       revision: main
+    - name: zmk-mouse
+      remote: ftc
+      revision: mouse-ftc
   self:
     path: config
