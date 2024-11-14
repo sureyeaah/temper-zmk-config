@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: keeb-it
       url-base: https://github.com/keeb-it
+    - name: ftc
+      url-base: https://github.com/ftc
   projects:
     - name: zmk
       remote: zmkfirmware
