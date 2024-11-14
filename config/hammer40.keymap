@@ -50,22 +50,14 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 /* Caps-word, num-word and smart-mouse */
 
-// tap: num-word | double-tap: sticky num-layer | hold: num-layer
-#define SMART_NUM &smart_num NUM 0
-ZMK_HOLD_TAP(smart_num,
+// tap: TAB | control + tap: TILDE | control + shift + tap: GRAVE | hold: numpad layer
+#define smart_tab smart_tab_inner NUM 0
+ZMK_BEHAVIOR(smart_tab_inner, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&num_dance>;
+    bindings = <&mo>, <&tab_tilde_grave>;
 )
-ZMK_TAP_DANCE(num_dance,
-    tapping-term-ms = <200>;
-    bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
-)
-&num_word {  // num-word, requires PR #1451
-    layers = <NUM>;
-    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-};
 
 /* Custom behaviors */
 
@@ -135,7 +127,7 @@ ZMK_LAYER(base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ╭─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp RBKT      &kp Z         &kp X         &kp C         &kp V         &kp B          &rot_td      &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH        &kp MINUS
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp BSLH      &kp PSCRN     &copy_cut     ___           &kp ESC       &lt NAV ENTER  SMART_NUM    &lt_spc FN 0  &kp BSPC      &kp DEL       ___           ___             &kp EQUAL
+    &kp BSLH      &kp PSCRN     &copy_cut     ___           &kp ESC       &lt NAV ENTER  smart_tab    &lt_spc FN 0  &kp BSPC      &kp DEL       ___           ___             &kp EQUAL
 //╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯ 
     , &inc_dec_kp C_VOL_UP C_VOL_DN
 )
