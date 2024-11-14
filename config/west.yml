@@ -2,6 +2,16 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    # Additional modules containing boards/shields/custom code can be listed here as well
+    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: urob
+      url-base: https://github.com/urob
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+    - name: keeb-it
+      url-base: https://github.com/keeb-it
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -10,6 +20,19 @@ manifest:
     - name: zmk-nodefree-config
       url: https://github.com/urob/zmk-nodefree-config.git
       path: config/zmk-nodefree-config
+      revision: main
+    # Note: The following imports only shields definition files
+    - name: zmk-keyboards
+      remote: keeb-it
+      revision: main
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main
+    - name: zmk-helpers
+      remote: urob
+      revision: v2 # this will eventually become main
+    - name: cirque-input-module
+      remote: petejohanson
       revision: main
   self:
     path: config

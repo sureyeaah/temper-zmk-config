@@ -1,0 +1,23 @@
+&xiao_i2c {
+    status = "okay";
+
+    cirque: cirque@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "okay";
+        dr-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH)>;
+        sensitivity = "2x";
+        sleep;
+        no-taps;
+    };
+};
+
+/ {
+  cirque_listener {
+    compatible = "zmk,input-listener";
+    device = <&cirque>;
+    y-invert;
+    scale-multiplier = <5>;
+    scale-divisor = <1>;
+  };
+};
