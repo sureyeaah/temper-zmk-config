@@ -164,7 +164,7 @@ ZMK_BEHAVIOR(boot, tap_dance,
     bindings = <&none>, <&bootloader>;
 )
 
-ZMK_CONDITIONAL_LAYER(NUM FUN, SYS)
+ZMK_CONDITIONAL_LAYER(sys, NUM FUN, SYS)
 
 ZMK_LAYER(Qwerty,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬───────────────╮
