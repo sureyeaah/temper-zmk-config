@@ -15,12 +15,10 @@
 
 /* Layers */
 #define DEF 0
-#define FN 2
+#define FN 1
 #define NUM 2
 #define SYS 3
 
-// #include "mouse.dtsi"
-#include "combos.dtsi"
 #include "behave.dtsi"
 
 /* Custom behaviors */
@@ -41,6 +39,26 @@ ZMK_TAP_DANCE(rot_td,
     bindings = <&kp C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
 )
 
+
+
+// left and right bracket [ ]
+ZMK_COMBO(lbkt, &kp LBKT, RT1 RT2, DEF, COMBO_TERM_FAST)
+ZMK_COMBO(rbkt, &kp RBKT, RT2 RT3, DEF, COMBO_TERM_FAST)
+
+// left and right parenthesis ( )
+ZMK_COMBO(lpar, &kp LPAR, RM1 RM2, DEF NUM, COMBO_TERM_FAST)
+ZMK_COMBO(rpar, &kp RPAR, RM2 RM3, DEF NUM, COMBO_TERM_FAST)
+
+// apostrophe
+ZMK_COMBO(apos, &kp APOS, RM3 RM4, DEF NUM, COMBO_TERM_FAST)
+
+// left and right less-then and greater-then < >
+ZMK_COMBO(lt, &kp LT, LT3 LT2, DEF, COMBO_TERM_FAST)
+ZMK_COMBO(gt, &kp GT, LT2 LT1, DEF, COMBO_TERM_FAST)
+
+// minus and equal - =
+ZMK_COMBO(minus, &kp MINUS, RB1 RB2, DEF NUM, COMBO_TERM_FAST)
+ZMK_COMBO(equal, &kp EQUAL, RB2 RB3, DEF NUM, COMBO_TERM_FAST)
 
 /* Keymap */
 
