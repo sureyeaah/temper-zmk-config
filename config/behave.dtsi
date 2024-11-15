@@ -56,6 +56,9 @@ ZMK_TRI_STATE(swapper,
         mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
         bindings = <BINDING1>, <BINDING2>; \
     )
+    
+// tap: plus | shift + tap: equal
+SIMPLE_MORPH(plus_equal, SFT, &kp PLUS, &kp EQUAL)
 
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_HOLD_TAP(lt_spc,
