@@ -91,3 +91,10 @@ ZMK_BEHAVIOR(tilde_grave_inner, mod_morph,
     mods = <(MOD_LSFT|MOD_LCTL)>; // need to clear the outer mods
     bindings = <&kp GRAVE>, <&kp GRAVE>;
 )
+
+// tap: backspace | lshft + tap: delete | rshft + tap: shift-delete
+ZMK_BEHAVIOR(bs_del, mod_morph,
+    bindings = <&kp BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    /* keep-mods = <MOD_RSFT>; */
+)
