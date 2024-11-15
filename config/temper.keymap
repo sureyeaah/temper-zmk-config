@@ -73,18 +73,18 @@ ZMK_COMBO(workspace_left,  &kp LC(LEFT),  LM3 LM2, NUM FUN, COMBO_TERM_FAST)
 ZMK_COMBO(workspace_right, &kp LC(RIGHT), LM2 LM1, NUM FUN, COMBO_TERM_FAST)
 
 // left and right arrow '->'
-ZMK_BEHAVIOR(larr, macro,
-    wait-ms = <0>;
-    tap-ms = <5>;
-    bindings = <&kp LT &kp MINUS>;
-)
-ZMK_BEHAVIOR(rarr, macro,
-    wait-ms = <0>;
-    tap-ms = <5>;
-    bindings = <&kp MINUS &kp GT>;
-)
-ZMK_COMBO(left_arrow,  &larr, LM3 LM2, DEF, COMBO_TERM_FAST)
-ZMK_COMBO(right_arrow, &rarr, LM2 LM1, DEF, COMBO_TERM_FAST)
+// ZMK_BEHAVIOR(larr, macro,
+//     wait-ms = <0>;
+//     tap-ms = <5>;
+//     bindings = <&kp LT &kp MINUS>;
+// )
+// ZMK_BEHAVIOR(rarr, macro,
+//     wait-ms = <0>;
+//     tap-ms = <5>;
+//     bindings = <&kp MINUS &kp GT>;
+// )
+// ZMK_COMBO(left_arrow,  &larr, LM3 LM2, DEF, COMBO_TERM_FAST)
+// ZMK_COMBO(right_arrow, &rarr, LM2 LM1, DEF, COMBO_TERM_FAST)
 
 
 // ----------- KEYMAP -----------
@@ -130,19 +130,8 @@ ZMK_BEHAVIOR(bs_del, mod_morph,
         bindings = <BINDING1>, <BINDING2>; \
     )
 
-// tap: colon | shift + tap: semicolon
-SIMPLE_MORPH(colon_semi, SFT, &kp COLON, &kp SEMI)
-
 // tap: plus | shift + tap: equal
 SIMPLE_MORPH(plus_equal, SFT, &kp PLUS, &kp EQUAL)
-
-// tap: space | shift + tap: dot -> space -> sticky shift | hold: space
-SIMPLE_MORPH(smart_space, SFT, &kp SPACE, &dot_space)
-ZMK_BEHAVIOR(dot_space, macro,
-    wait-ms = <0>;
-    tap-ms = <5>;
-    bindings = <&kp DOT &kp SPACE &sk LSHFT>;
-)
 
 // tap: TAB | control + tap: TILDE | control + shift + tap: GRAVE | hold: numpad layer
 #define smart_tab smart_tab_inner NUM 0
@@ -174,7 +163,7 @@ ZMK_LAYER(Qwerty,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼───────────────┤
      &kp Z            &kp X         &kp C         &kp V         &kp B             &kp N         &kp M        &kp COMMA      &kp DOT       &kp SLASH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────╯
-                                   &kp ESC    &smart_space   &smart_tab      &lt FUN ENTER   &bs_del       &shift_word
+                                   &kp ESC    &kp SPACE    &smart_tab      &lt FUN ENTER   &bs_del       &shift_word
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
