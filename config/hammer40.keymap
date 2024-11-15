@@ -58,6 +58,12 @@ ZMK_BEHAVIOR(smart_tab_inner, hold_tap,
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&mo>, <&tab_tilde_grave>;
 )
+SIMPLE_MORPH(tab_tilde_grave, CTL, &kp TAB, &tilde_grave)
+SIMPLE_MORPH(tilde_grave, SFT, &kp TILDE, &tilde_grave_inner)
+ZMK_BEHAVIOR(tilde_grave_inner, mod_morph,
+    mods = <(MOD_LSFT|MOD_LCTL)>; // need to clear the outer mods
+    bindings = <&kp GRAVE>, <&kp GRAVE>;
+)
 
 /* Custom behaviors */
 
@@ -127,7 +133,7 @@ ZMK_LAYER(base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ╭─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp RBKT      &kp Z         &kp X         &kp C         &kp V         &kp B          &rot_td      &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH        &kp MINUS
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp BSLH      &kp PSCRN     &copy_cut     ___           &kp ESC       &lt NAV ENTER  smart_tab    &lt_spc FN 0  &kp BSPC      &kp DEL       ___           ___             &kp EQUAL
+    &kp BSLH      &kp PSCRN     &copy_cut     ___           &kp ESC       &lt NAV ENTER  &smart_tab    &lt_spc FN 0  &kp BSPC      &kp DEL       ___           ___             &kp EQUAL
 //╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯ 
     , &inc_dec_kp C_VOL_UP C_VOL_DN
 )
