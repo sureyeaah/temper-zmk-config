@@ -1,3 +1,5 @@
+#include "hammer40_keylabels.h"
+
 /*
   ╭─────────────────────────╮   ╭─────────────────────────╮
   │ LT5 LT4 LT3 LT2 LT1 LT0 │   │ RT0 RT1 RT2 RT3 RT4 RT5 │
